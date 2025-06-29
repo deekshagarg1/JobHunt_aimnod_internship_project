@@ -144,44 +144,6 @@ const jobStorage = multer.diskStorage({
 const jobUpload = multer({ storage: jobStorage }); // Renamed from "upload"
 
 
-// ✅ Job creation with logo upload
-// app.post("/api/jobs", jobUpload.single("logo"), async (req, res) => {
-//   try {
-//     const {
-//       company,
-//       country,
-//       title,
-//       description,
-//       skills,
-//       workmode,
-//       salary,
-//       experience
-//     } = req.body;
-
-//     const logoURL = req.file ? `/uploads/${req.file.filename}` : "";
-
-//     const newJob = new Job({
-//       company,
-//       country,
-//       title,
-//       description,
-//       skills: skills ? skills.split(",") : [],
-//       logoURL,
-//       workmode,
-//       salary,
-//       experience
-//     });
-
-//     const result = await newJob.save();
-//     res.status(201).json(result);
-//   } catch (err) {
-//     console.error("Job creation error:", err);
-//     res.status(500).json({ error: "Failed to create job" });
-//   }
-// });
-
-
-
 app.post("/api/jobs", jobUpload.single("logo"), async (req, res) => {
   try {
     const {

@@ -7,15 +7,12 @@ const JobCard = ({ job }) => {
   if (!job || !job._id) return null;
 
   const [bookmarked, setBookmarked] = useState(false);
-  // const [applied, setApplied] = useState(false);
+  
 
   useEffect(() => {
     const likedJobs = JSON.parse(localStorage.getItem('likedJobs')) || [];
-    // const appliedJobs = JSON.parse(localStorage.getItem('appliedJobs')) || [];
 
-    setBookmarked(likedJobs.some(j => j._id === job._id));
-    // setApplied(appliedJobs.some(j => j._id === job._id));
-  }, [job]);
+    setBookmarked(likedJobs.some(j => j._id === job._id));  }, [job]);
 
   const toggleBookmark = () => {
     const likedJobs = JSON.parse(localStorage.getItem('likedJobs')) || [];
@@ -29,14 +26,6 @@ const JobCard = ({ job }) => {
     setBookmarked(!bookmarked);
   };
 
-  // const handleApply = () => {
-  //   const appliedJobs = JSON.parse(localStorage.getItem('appliedJobs')) || [];
-  //   if (!appliedJobs.some(j => j._id === job._id)) {
-  //     appliedJobs.push(job);
-  //     localStorage.setItem('appliedJobs', JSON.stringify(appliedJobs));
-  //     setApplied(true);
-  //   }
-  // };
 
   const handleDetails = () => {
     navigate(`/job/${job._id}`);
@@ -76,12 +65,6 @@ const JobCard = ({ job }) => {
         <button className="details-btn" onClick={handleDetails}>
           Details
         </button>
-        {/* {!applied && (
-          <button className="apply-btn" onClick={handleApply}>
-            Apply
-          </button>
-        )} */}
-        {/* {applied && <span className="applied-badge">Applied</span>} */}
       </div>
     </div>
   );

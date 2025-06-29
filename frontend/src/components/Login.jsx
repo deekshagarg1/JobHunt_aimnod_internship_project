@@ -58,10 +58,6 @@ export const Login = () => {
         </div>
         <br />
         <button onClick={handelLogin}>Login</button>
-        {/* <div className="for">
-          <Link to="/forget"><u>Forget Password?</u></Link>
-          <Link to="/signup"><p>Sign up</p></Link>
-        </div> */}
       </div>
     </div>
   );

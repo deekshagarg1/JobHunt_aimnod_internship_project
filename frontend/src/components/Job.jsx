@@ -1,30 +1,3 @@
-// import React, { useState } from 'react';
-// import JobCard from './Jobcard';
-// // import Jobcard from './Jobcard1';
-// // import { Jobcard } from './Jobcard';
-// // import './Job.css';
-
-// export const Job = () => {
-
-
-//   return (
-//    <>
-//     <div className="job-card-container">
-//          <h3>Search Results (1)</h3>
-//  <div className="jobAll">
-
-//     <JobCard />
-//  </div>
-//    </div>
-//    </>
-//   );
-// };
-
-// export default Job;
-
-
-
-
 import React, { useEffect, useState } from 'react';
 import JobCard from './Jobcard';
 import axios from 'axios';
